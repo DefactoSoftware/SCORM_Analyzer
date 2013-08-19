@@ -1,3 +1,5 @@
 /Defacto.ScormAnalysis.Core/bin
 /Defacto.ScormAnalysis.Core/obj
 /packages
+/Defacto.ScormAnalysis.Gui/obj
+/Defacto.ScormAnalysis.Gui/bin
