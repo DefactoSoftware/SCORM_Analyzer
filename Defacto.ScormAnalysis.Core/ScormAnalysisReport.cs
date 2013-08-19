@@ -22,8 +22,25 @@ namespace Defacto.ScormAnalysis.Core
 
       private ScormAnalysisReport(ZipFile zipFile)
       {
-
+         ImsManifestExtractor.Load(zipFile);
       }
+
+      #endregion
+
+      #region Nested type: IMSManifestExtractor
+
+      private static class ImsManifestExtractor
+      {
+         public static void Load(ZipFile zipFile)
+         {
+            if (zipFile.FindEntry("imsmanifest.xml", true) == -1)
+               throw new ScormAnalysisReportCreationException("The loaded package does not contain an 'IMSManifest.xml'-file.");
+         }
+      }
+
+      #endregion
+
+      #region Nested type: ZipFileHelper
 
       private static class ZipFileHelper
       {
